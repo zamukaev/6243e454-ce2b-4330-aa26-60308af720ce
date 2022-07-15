@@ -1,0 +1,15 @@
+.main{
+	.container{
+		max-width: 1200px;
+		margin:100px auto;
+		.eventBlock{
+			.title{
+				font-size: 36px;
+				height: calc(36/25*100%) ;
+				font-weight: 700;
+				margin-bottom: 40px;
+
+			}
+		}
+	}
+}

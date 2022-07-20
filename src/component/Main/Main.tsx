@@ -21,9 +21,9 @@ const Main: FC = () => {
 		return accum
 	}, []);
 
-	const setData = new Set(newData);
-
-	setData.forEach(item => {
+	let setData: any = new Set(newData);
+	let dataAr = Array.from(setData).sort()
+	dataAr.forEach((item: any) => {
 		let newArr: any[] = [];
 		for (let j = 0; j < data.length; j++) {
 			if (item === data[j].date) {

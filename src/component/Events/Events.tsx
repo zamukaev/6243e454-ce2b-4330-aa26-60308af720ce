@@ -17,6 +17,7 @@ const Events: FC<EventsProps> = ({ events }) => {
 
 	const { searchValue } = useAppSelector(state => state.filter);
 	const filteredEvents = events.filter((event: IData) => event.title.toLowerCase().includes(searchValue.toLowerCase()));
+
 	if (filteredEvents[0].flyerFront) {
 		date = new Date(filteredEvents[0].date).toString().split(' ', 4).join(' ');
 	}

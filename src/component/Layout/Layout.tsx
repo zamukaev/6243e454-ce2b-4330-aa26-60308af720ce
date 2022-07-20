@@ -2,13 +2,7 @@ import { FC } from "react";
 
 import Header from "../Header/Header";
 
-import styled from 'styled-components';
-
-const StyledLayout = styled.div`
-max-width:1200px;
-margin:0px auto;
-`
-
+import styles from './Layout.module.scss';
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -16,10 +10,9 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
 	return (
-		<StyledLayout>
-			<Header />
+		<div className={styles.container}>
 			{children}
-		</StyledLayout>
+		</div>
 	);
 }
 

@@ -1,0 +1,35 @@
+.button{
+    cursor: pointer;
+    color: var(--primary-color);
+    padding: 10px 10px;
+    
+}
+
+.clear{
+    margin: 0px;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    color: var(--header-bg-color);
+}
+.round,.red{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border-radius: 50px;
+    font:var(--font-m);
+    color: var(--btn-color);
+    background: var(--header-bg-color);
+}
+.red{
+      background: var(--color-red);
+}
+.outline{
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    color: var(--header-bg-color);
+    border: 2px solid var(--header-bg-color);
+    background: none;
+}

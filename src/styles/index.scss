@@ -1,0 +1,25 @@
+@import "reset";
+@import "variables/global";
+
+body {
+  font: var(--font-m);
+  font-weight: 400;
+  color: var(--primary-color);
+  background-color: #fff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+.app{
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.app-wrapper{
+    margin-top: 60px;
+}

@@ -1,0 +1,21 @@
+.content{
+    .card{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:start;
+        align-items: start;
+        padding: 0px 10px;
+        margin: -15px;
+    }
+    .title{
+        position: sticky;
+        padding: 10px 10px;
+        top: 50px;
+        margin-bottom: 20px;
+        color: var(--header-bg-color);
+        background: #ffffffaf;
+        z-index: 10;
+        
+    }
+}
+

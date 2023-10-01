@@ -1,0 +1,24 @@
+.cart{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .title{
+        margin-top: 50px;
+    }
+    .empty{
+        margin-top: 200px;
+        align-self: center;
+    }
+    .toHomeBtn{  
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        &:hover{
+          .arrow{
+             transition: all ease 0.3s;
+            margin-left: -20px;
+          }
+        }
+    }
+
+}

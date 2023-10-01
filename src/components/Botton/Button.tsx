@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes, FC, useCallback } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -29,11 +29,11 @@ export const Button: FC<ButtonProps> = (props) => {
         href = '/'
     } = props;
 
-    const clickHandler = () => {
+    const clickHandler = useCallback(() => {
         if (onClick) {
             onClick()
         }
-    }
+    }, [onClick])
 
     return (
         link ?

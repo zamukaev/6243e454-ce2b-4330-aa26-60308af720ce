@@ -7,6 +7,7 @@ import { Card } from '../../components/Card/Card';
 import { Headline, Size } from '../../components/Headline/Headline';
 
 import styles from './MainPage.module.scss';
+import { PageLoader } from '../../components/PageLoader/PageLoader';
 
 interface MainPageProps {
     className?: string;
@@ -23,17 +24,15 @@ const MainPage: FC<MainPageProps> = () => {
     }
 
     if (isLoading) {
-        return (
-            <div className={styles.mainPage}>
-                <h1>loading...</h1>
-            </div>
-        );
+        return (<PageLoader />);
     }
 
     return (
         <div className={styles.mainPage}>
             <Headline className={styles.title} HTag='h1' size={Size.L}>Public Events</Headline>
-            {events && Object.keys(events).map(keyItem => <Card key={keyItem} title={keyItem} events={events[keyItem]} />)}
+            {events && Object.keys(events).map(keyItem => (
+                <Card key={keyItem} title={keyItem} events={events[keyItem]} />
+            ))}
         </div>
     );
 }

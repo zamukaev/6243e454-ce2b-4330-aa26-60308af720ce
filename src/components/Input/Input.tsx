@@ -1,4 +1,4 @@
-import { FC, InputHTMLAttributes } from 'react';
+import { FC, InputHTMLAttributes, useCallback } from 'react';
 
 import { BiSearchAlt2 } from 'react-icons/bi';
 import { MdOutlineClear } from 'react-icons/md';
@@ -21,9 +21,9 @@ export const Input: FC<InputProps> = (props) => {
     const { className, value, type, placeholder, onChange, isFocus, onClear, ...otherProps
     } = props;
 
-    const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const changeHandler = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(event.target.value)
-    }
+    }, [onChange])
 
     return (
         <div className={styles.inputContainer}>

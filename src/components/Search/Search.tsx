@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAppDispatch } from '../../store/hooks/useAppDispatch';
@@ -19,19 +19,19 @@ export const Search: FC<SearchProps> = (props) => {
     const [isFocus, setIsFocus] = useState(false);
     const { value } = useSelector(getInputValue);
 
-    const searchHandler = (inputValue: string) => {
+    const searchHandler = useCallback((inputValue: string) => {
         dispatch(searchActions.setInputValue(inputValue));
-    }
+    }, [dispatch])
 
-    const setFocusHandler = () => {
+    const setFocusHandler = useCallback(() => {
         if (!value) {
             setIsFocus(!isFocus);
         }
-    }
-    const clearInputHandler = () => {
+    }, [isFocus, value])
+    const clearInputHandler = useCallback(() => {
         dispatch(searchActions.setInputValue(''));
         setIsFocus(!isFocus);
-    }
+    }, [dispatch, isFocus])
 
     return (
         <Input

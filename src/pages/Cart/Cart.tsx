@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { useSelector } from 'react-redux';
 
 import { getCartData } from '../../store/selectors/getCartDate';
@@ -51,6 +51,6 @@ const Cart: FC<CartProps> = (props) => {
             }
         </section>
     );
-}
+};
 
 export default Cart;

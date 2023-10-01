@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
 import { EventData } from '../../store/types/EventSchema';
@@ -28,19 +28,21 @@ export const Card: FC<CardProps> = (props) => {
 
     let eventListToDisplay = events;
 
-    const renderEventList = () => {
+    if (value) {
+        eventListToDisplay = events?.filter((event) => (
+            event.title.toLowerCase().includes(value?.toLowerCase())
+        ));
+    }
+
+    const renderEventList = useCallback(() => {
         return eventListToDisplay?.map(event => (
             <CardItem
                 key={event._id}
                 event={event}
                 className={className} />
         ));
-    }
-    if (value) {
-        eventListToDisplay = events?.filter((event) => (
-            event.title.toLowerCase().includes(value?.toLowerCase())
-        ));
-    }
+    }, [eventListToDisplay, className])
+
 
     return (
         <section className={styles.content} >

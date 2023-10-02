@@ -1,7 +1,15 @@
 .mainPage{
-     
     .title{
         padding: 0px 10px;
         margin: 20px 0;
     }
+    .tags{
+        display: inline-flex;
+        justify-content: space-between;
+        .icon{
+             width: 15px;
+             margin-right: 3px;
+        }
+    }
+  
 }
